@@ -1,0 +1,12 @@
+SELECT Beverage
+FROM drink_menu_database
+WHERE Calories = (SELECT MAX(Calories) FROM ET3_Task);
+
+SELECT Beverage_category,AVG(Calories) AS avarage
+FROM drink_menu_database
+GROUP BY Beverage_category
+ORDER BY avarage desc;
+
+SELECT distinct Beverage , Calories
+FROM drink_menu_database
+WHERE Calories < (SELECT AVG(Calories) FROM ET3_Task);
